@@ -1,0 +1,4 @@
+<h2>Popular Tags</h2>
+{% for tag in tags %}
+    <p>{{ tag.name }} (used {{ tag.usage_count }} times)</p>
+{% endfor %}
