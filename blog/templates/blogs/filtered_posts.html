@@ -1,0 +1,26 @@
+<!-- blogs/filtered_posts.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Filtered Posts</title>
+</head>
+<body>
+    <h1>Filtered Posts</h1>
+
+    {% if tags %}
+        <h3>Filtered by Tags: {{ tags|join:", " }}</h3>
+    {% endif %}
+
+    <ul>
+        {% for post in posts %}
+            <li>{{ post.title }}</li>
+            <p>{{ post.content }}</p>
+            <ul>
+                {% for tag in post.tags.all %}
+                    <li>{{ tag.name }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+</body>
+</html>

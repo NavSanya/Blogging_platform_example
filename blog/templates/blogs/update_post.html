@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Post</title>
+</head>
+<body>
+    <h1>Update Post: {{ post.title }}</h1>
+    
+    <form method="POST" action="{% url 'update_post' post.pk %}">
+        {% csrf_token %}
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" value="{{ post.title }}" required><br><br>
+        
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" rows="4" cols="50" required>{{ post.content }}</textarea><br><br>
+        
+        <label for="tags">Tags:</label><br>
+        <input type="text" id="tags" name="tags" value="{% for tag in post.tags.all %}{{ tag.name }}{% if not forloop.last %}, {% endif %}{% endfor %}" placeholder="Comma separated tags"><br><br>
+        
+        
+        <label for="author">Author:</label><br>
+        <input type="text" id="author" name="author"><br><br>
+
+        <input type="submit" value="Update Post">
+    </form>
+</body>
+</html>
