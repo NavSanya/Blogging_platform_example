@@ -50,7 +50,7 @@ Use Django's testing framework
 
 - **List of all posts:** http://127.0.0.1:8000/blog/
 - **Create a new post:** http://127.0.0.1:8000/blog/create/
-- **Update a post (replace `<pk>` with post ID):** http://127.0.0.1:8000/blog/update/`<pk>`/
+- **Update a post (replace `<pk>` with post ID):** http://127.0.0.1:8000/blog/update/<pk>/
 - **Filter posts by tags:** http://127.0.0.1:8000/blog/filter/?tags=Technology
 - **Search posts by tag (replace `<tag_name>` with tag name):** http://127.0.0.1:8000/blog/search/<tag_name>/
 - **View popular tags:** http://127.0.0.1:8000/blog/popular/
